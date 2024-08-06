@@ -1,10 +1,17 @@
+// Highlighting for code blocks
+import "prismjs/themes/prism-tomorrow.css"
+
+import Prism from "prismjs"
+
 // custom typefaces
 import "@fontsource-variable/montserrat"
 import "@fontsource/merriweather"
-// normalize CSS across browsers
-import "./src/normalize.css"
-// custom CSS styles
-import "./src/style.css"
 
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
+// custom CSS styles.gatsbyスターターのものを流用
+import "./src/style.css"
+// taillwind
+import "./src/styles/global.css"
+
+export const onRouteUpdate = ({ location }) => {
+  Prism.highlightAll()
+}
