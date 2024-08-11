@@ -15,7 +15,11 @@ const ArticlePost = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <Seo title={post.content} description={post.content.slice(0, 150)}>
+      <Seo
+        title={post.content}
+        description={post.content.slice(0, 150)}
+        eyecatch={post.eyecatch.url}
+      >
         <div
           className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-300"
           dangerouslySetInnerHTML={{ __html: post.content }}

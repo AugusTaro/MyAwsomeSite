@@ -11,7 +11,10 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All articles" />
+      <Seo
+        title="All articles"
+        eyecatch="https://augustaro.github.io/My_Images/MyIcon/MyIcon.jpg"
+      />
       <div className="container mx-auto px-4 py-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {posts.map(post => {
