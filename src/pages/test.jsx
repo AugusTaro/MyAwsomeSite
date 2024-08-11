@@ -15,7 +15,6 @@ const Test = ({ data, location }) => {
           <h3>えいちすり</h3>
           <p>ぴーちゃん</p>
         </div>
-        {/* html2canvas(document.querySelector("#target")).then((canvas) => {}); */}
       </Layout>
     </>
   )
