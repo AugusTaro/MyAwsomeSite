@@ -35,6 +35,10 @@ const Seo = ({ description, title, children }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
+      <meta
+        property="og:image"
+        content="https://augustaro.github.io/My_Images/MyIcon/MyIcon.jpg"
+      />
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:creator"
@@ -42,6 +46,11 @@ const Seo = ({ description, title, children }) => {
       />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <meta
+        name="twitter:image"
+        content="https://augustaro.github.io/My_Images/MyIcon/MyIcon.jpg"
+      />
+
       {children}
     </>
   )
