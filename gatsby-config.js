@@ -18,9 +18,9 @@ module.exports = {
       summary: `東京で個人開発してます!。MacBookのキーボードタッチパッドが好きです。`,
     },
     description: `Javascriptを中心に、プログラミングに技術について紹介するブログです。個人開発に関するネタを中心に発信します。`,
-    siteUrl: `augustaro.com`,
+    siteUrl: `https://augustaro.com`,
     social: {
-      twitter: `Xplosion_dev`,
+      twitter: `kylemathews`,
     },
   },
   plugins: [
