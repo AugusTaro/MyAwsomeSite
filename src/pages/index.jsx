@@ -8,7 +8,10 @@ export const StartPage = location => {
   return (
     <>
       <Layout location={location}>
-        <Seo title="AugusTaroの館">
+        <Seo
+          title="AugusTaroの館"
+          eyecatch="https://augustaro.github.io/My_Images/MyIcon/MyIcon.jpg"
+        >
           <div className="flex justify-center  ">
             <div className="px-5 pt-5  max-w-md ">
               <UserCard />
