@@ -1,6 +1,6 @@
 // src/templates/article.js
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import "tailwindcss/tailwind.css"
 import { useEffect } from "react"
@@ -23,12 +23,17 @@ const ArticlePost = ({ data, location }) => {
             : "コンテンツが存在しません。"
         }
         eyecatch={post.eyecatch.url}
-      >
-        <div
-          className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-300"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        ></div>
-      </Seo>
+      ></Seo>
+      <div
+        className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-300"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      ></div>
+
+      <div className="w-full  p-10 flex justify-center ">
+        <Link to="/blogIndex">
+          <div className="btn  btn-primary btn-sm my-5">記事の一覧に戻る</div>
+        </Link>
+      </div>
     </Layout>
   )
 }
