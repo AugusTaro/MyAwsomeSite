@@ -19,28 +19,28 @@ function formatDateTime(datetimeString) {
   return `${year}-${month}-${day}, ${hours}:${minutes}`
 }
 export const ArticleCard = props => {
-  const { id, title, link, category, createdAt } = props
+  const { title, link, category, createdAt, eyecatch } = props
   return (
     <>
       <Link to={link}>
-        <div className="w-full px-4 ">
-          <div className="card card-compact bg-base-100  shadow-xl">
-            <figure>
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{title}</h2>
-              <p className="font-sans font-light text-sm text-gray-600 leading-relaxed">
-                {formatDateTime(createdAt)}
-              </p>
-              <div className="card-actions justify-end">
-                {category.map(category => (
-                  <button className="btn btn-xs">{category.name}</button>
-                ))}
-              </div>
+        <div className="card bg-base-100 image-full w-full h-52 shadow-xl">
+          <figure className="h-full w-full">
+            <img src={eyecatch} alt="Shoes" className="object-cover w-full" />
+          </figure>
+          <div className="card-body flex flex-col justify-between">
+            <div className="h-24 ">
+              <h2 className="card-title text-white text-xl ">{title}</h2>
+            </div>
+
+            <p className=" font-sans font-light   leading-relaxed">
+              {formatDateTime(createdAt)}
+            </p>
+            <div className=" h-6">
+              {category.map(category => (
+                <button key={category.id} className="mx-0.5 btn btn-xs p-0.5 ">
+                  {category.name}
+                </button>
+              ))}
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import * as React from "react"
 import { LINK_URLS } from "../constants/linkURLs"
 export const UserCard = () => {
   return (
-    <div className="card bg-base-100   shadow-xl  text-gray-600">
+    <div className="card bg-base-100   shadow-xl  ">
       <div className="flex flex-col  items-center">
         <StaticImage
           src={`../images/MyIcon.jpg`}

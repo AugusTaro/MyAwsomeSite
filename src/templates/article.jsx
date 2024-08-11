@@ -15,7 +15,7 @@ const ArticlePost = ({ data, location }) => {
   return (
     <Layout location={location}>
       <div
-        className="prose p-6  mx-auto lg:max-w-full "
+        className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-300"
         dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
     </Layout>

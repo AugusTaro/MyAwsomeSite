@@ -20,9 +20,9 @@ export const SideMenue = props => {
         <div className="flex justify-end">
           <AiOutlineCloseSquare size={30} onClick={onClickClose} />
         </div>
-        <ul className="menu  backdrop-blur rounded-box ">
+        <ul className="menu  bg-base-100 rounded-box shadow-md ">
           <li>
-            <Link to="/">スタート</Link>
+            <Link to="/">作成者について</Link>
           </li>
           <li>
             <Link to="/blogIndex">ブログ</Link>
