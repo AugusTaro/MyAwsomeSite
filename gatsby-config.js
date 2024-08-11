@@ -12,15 +12,15 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `オーガスタロウの館`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `水島エクスプロージョン`,
+      summary: `東京で個人開発してます!。MacBookのキーボードタッチパッドが好きです。`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Javascriptを中心に、プログラミングに技術について紹介するブログです。個人開発に関するネタを中心に発信します。`,
+    siteUrl: `augustaro.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `Xplosion_dev`,
     },
   },
   plugins: [
@@ -83,7 +83,7 @@ module.exports = {
         name: `Gatsby Starter Blog`,
         short_name: `Gatsby`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        // background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,

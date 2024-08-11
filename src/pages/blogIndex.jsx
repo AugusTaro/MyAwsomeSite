@@ -12,14 +12,15 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {posts.map(post => {
             const title = post.title || "Title"
-            const link = `articles/${post.blogsId}`
+            const link = `/articles/${post.blogsId}`
             const key = post.id
             const createdAt = post.createdAt
             const category = post.category
+            const eyecatch = post.eyecatch.url
             return (
               <div className="p-2">
                 <ArticleCard
@@ -28,6 +29,7 @@ const BlogIndex = ({ data, location }) => {
                   createdAt={createdAt}
                   link={link}
                   category={category}
+                  eyecatch={eyecatch}
                 />
               </div>
             )
@@ -54,8 +56,10 @@ export const pageQuery = graphql`
         content
         blogsId
         createdAt
+        eyecatch {
+          url
+        }
         category {
-          id
           name
         }
       }

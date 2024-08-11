@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { Navbar } from "./Navbar"
 
 const Layout = ({ location, title, children }) => {
@@ -14,20 +13,15 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div data-is-root-path={isRootPath}>
+    <div className="" data-is-root-path={isRootPath}>
       {/* <header>{header}</header> */}
       <header></header>
+      {/* ヘッダーです */}
       <Navbar />
-      <div className="overfl">
-        <main>
-          <div>{children}</div>
-        </main>
-      </div>
-      {/* <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer> */}
+
+      <main>
+        <div>{children}</div>
+      </main>
     </div>
   )
 }

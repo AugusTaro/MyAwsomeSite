@@ -35,7 +35,7 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: ["fantasy"],
+    themes: ["emerald"],
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 }

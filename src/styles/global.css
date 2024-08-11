@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  .custom-container-hr hr {
-    @apply border-gray-900 my-8 h-0.5;
-  }
-} */
+html,
+body {
+  @apply bg-base-100 text-primary-content;
+  min-height: 100vh;
+}
