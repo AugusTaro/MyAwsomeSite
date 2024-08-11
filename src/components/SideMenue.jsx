@@ -18,7 +18,11 @@ export const SideMenue = props => {
     >
       <div className="flex-row">
         <div className="flex justify-end">
-          <AiOutlineCloseSquare size={30} onClick={onClickClose} />
+          <AiOutlineCloseSquare
+            className="hover:cursor-pointer"
+            size={30}
+            onClick={onClickClose}
+          />
         </div>
         <ul className="menu  bg-base-100 rounded-box shadow-md ">
           <li>

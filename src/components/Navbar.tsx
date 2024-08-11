@@ -20,7 +20,11 @@ export const Navbar = () => {
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal p-0 bg-opacity-0">
-            <RxHamburgerMenu size={25} onClick={onClickHamburger} />
+            <RxHamburgerMenu
+              className="hover:cursor-pointer"
+              size={25}
+              onClick={onClickHamburger}
+            />
           </ul>
         </div>
       </div>
