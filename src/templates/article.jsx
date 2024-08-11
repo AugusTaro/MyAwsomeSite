@@ -17,7 +17,11 @@ const ArticlePost = ({ data, location }) => {
     <Layout location={location}>
       <Seo
         title={post.title}
-        description={post.content.slice(0, 150)}
+        description={
+          post.content
+            ? post.content.slice(0, 150)
+            : "コンテンツが存在しません。"
+        }
         eyecatch={post.eyecatch.url}
       >
         <div
