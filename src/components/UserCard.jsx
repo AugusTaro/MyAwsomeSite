@@ -13,6 +13,8 @@ export const UserCard = () => {
         />
 
         <h1 className="card-title font-serif">エクスプロージョン/eXplosion</h1>
+        {console.log(process.env.MICROCMS_API_KEY)}
+        <h1>{process.env.MICROCMS_API_KEY}</h1>
         <div className="w-50">
           <div className="flex justify-between ">
             <Link to={LINK_URLS.QIITA}>

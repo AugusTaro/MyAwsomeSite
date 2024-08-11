@@ -7,9 +7,11 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const path = require("path")
 
-require("dotenv").config()
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `オーガスタロウの館`,
@@ -29,11 +31,11 @@ module.exports = {
     {
       resolve: "gatsby-source-microcms",
       options: {
-        apiKey: "oQsmACOtRsDUljsya3OfnRoIhEFMhmlm5fgs",
-        serviceId: "explosion",
+        apiKey: process.env.MICROCMS_API_KEY,
+        serviceId: process.env.MICROCMS_SERVICE_ID,
         apis: [
           {
-            endpoint: "blogs",
+            endpoint: process.env.MICROCMS_ENDPOINT,
           },
         ],
       },
