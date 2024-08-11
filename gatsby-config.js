@@ -19,10 +19,10 @@ module.exports = {
       name: `水島エクスプロージョン`,
       summary: `東京で個人開発してます!。MacBookのキーボードタッチパッドが好きです。`,
     },
-    description: `Javascriptを中心に、プログラミングに技術について紹介するブログです。個人開発に関するネタを中心に発信します。`,
+    description: `個人開発に関するネタを中心に記事を書いています。`,
     siteUrl: `https://augustaro.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `eXplosion_dev`,
     },
   },
   plugins: [

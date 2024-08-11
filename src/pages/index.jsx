@@ -8,7 +8,7 @@ export const StartPage = location => {
   return (
     <>
       <Layout location={location}>
-        <Seo>
+        <Seo title="AugusTaroの館">
           <div className="flex justify-center  ">
             <div className="px-5 pt-5  max-w-md ">
               <UserCard />
