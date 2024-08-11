@@ -16,7 +16,7 @@ const ArticlePost = ({ data, location }) => {
   return (
     <Layout location={location}>
       <Seo
-        title={post.content}
+        title={post.title}
         description={post.content.slice(0, 150)}
         eyecatch={post.eyecatch.url}
       >
