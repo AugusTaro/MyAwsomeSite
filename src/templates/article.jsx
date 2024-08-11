@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import "tailwindcss/tailwind.css"
 import { useEffect } from "react"
 import Prism from "prismjs"
+import Seo from "../components/seo"
 
 const ArticlePost = ({ data, location }) => {
   const post = data.microcmsBlogs
@@ -14,10 +15,12 @@ const ArticlePost = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <div
-        className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-300"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      ></div>
+      <Seo title={post.content} description={post.content.slice(0, 150)}>
+        <div
+          className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-300"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        ></div>
+      </Seo>
     </Layout>
   )
 }
