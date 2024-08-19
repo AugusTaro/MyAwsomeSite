@@ -25,13 +25,13 @@ const ArticlePost = ({ data, location }) => {
         eyecatch={post.eyecatch.url}
       ></Seo>
       <div
-        className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-300"
+        className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-200"
         dangerouslySetInnerHTML={{ __html: post.content }}
       ></div>
 
       <div className="w-full  p-10 flex justify-center ">
         <Link to="/blogIndex">
-          <div className="btn  btn-primary btn-sm my-5">記事の一覧に戻る</div>
+          <div className="btn  btn-secondary btn-sm my-5">記事の一覧に戻る</div>
         </Link>
       </div>
     </Layout>
