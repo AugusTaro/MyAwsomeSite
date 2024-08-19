@@ -34,7 +34,7 @@ export const UserCard = () => {
               <StaticImage
                 src={`../images/github.svg`}
                 alt="UserIcon"
-                className="rounded-full w-8 mx-2"
+                className="rounded-full w-8 mx-2 bg-black"
               />
             </Link>
           </div>

@@ -19,10 +19,13 @@ export const Navbar = () => {
           </ul>
         </div>
         <div className="flex-none">
+          <ul className="menu underline">
+            <Link to="/">about me</Link>
+          </ul>
           <ul className="menu menu-horizontal p-0 bg-opacity-0">
             <RxHamburgerMenu
               className="hover:cursor-pointer"
-              size={25}
+              size={30}
               onClick={onClickHamburger}
             />
           </ul>

@@ -2,10 +2,6 @@ import { AiOutlineCloseSquare } from "react-icons/ai"
 import React from "react"
 import { Link } from "gatsby"
 export const SideMenue = props => {
-  //   const [openMenue, setOpenMenue] = useState(false)
-  //   const onClickHamburger = () => {
-  //     setOpenMenue(!openMenue)
-  //   }
   const { openMenue, setOpenMenue } = props
   const onClickClose = () => {
     setOpenMenue(false)

@@ -9,7 +9,7 @@ export const ContentsCard = props => {
         <p className="font-sans text-sm">{discribe}</p>
         <div className="card-actions justify-end ">
           <Link to={link}>
-            <button className="btn  btn-ghost  shadow-md text-[#a1db44]">
+            <button className="btn  btn-ghost bg-base-100  shadow-md text-[#a1db44]">
               GO!
             </button>
           </Link>
