@@ -6,6 +6,8 @@ import "tailwindcss/tailwind.css"
 import { useEffect } from "react"
 import Prism from "prismjs"
 import Seo from "../components/seo"
+import { formatDateTime } from "../utils/formatDateTime"
+import { CategoryButtons } from "../components/CategoryButtons"
 
 const ArticlePost = ({ data, location }) => {
   const post = data.microcmsBlogs
@@ -24,6 +26,16 @@ const ArticlePost = ({ data, location }) => {
         }
         eyecatch={post.eyecatch.url}
       ></Seo>
+      <div className="prose mx-auto pt-5 px-3 lg:max-w-full font-serif ">
+        <h1 className="">{post.title}</h1>
+        <div className="font-sans">
+          投稿日：{formatDateTime(post.createdAt)}
+        </div>
+        <div>
+          <CategoryButtons category={post.category} />
+        </div>
+        <hr />
+      </div>
       <div
         className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-200"
         dangerouslySetInnerHTML={{ __html: post.content }}
@@ -45,6 +57,11 @@ export const query = graphql`
     microcmsBlogs(blogsId: { eq: $blogsId }) {
       title
       content
+      createdAt
+      category {
+        name
+        id
+      }
       eyecatch {
         url
         width
