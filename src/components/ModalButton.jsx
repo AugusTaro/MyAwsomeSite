@@ -1,6 +1,7 @@
 import * as React from "react"
 import { ContentsCard } from "./ContentsCard"
 import { AppCard } from "./AppCard"
+import { IMAGE_URLS } from "../constants/imageUrls"
 export const ModalButton = props => {
   const { apps } = props
   return (
@@ -20,11 +21,18 @@ export const ModalButton = props => {
             <div className="grid grid-cols-2  gap-4">
               {apps.map(app => {
                 return (
-                  <AppCard
-                    title={app.title}
-                    eyeCatch={app.eyecatch.url}
-                    link={`/articles/${app.blogsId}`}
-                  />
+                  <>
+                    <AppCard
+                      title={app.title}
+                      eyeCatch={app.eyecatch.url}
+                      link={`/articles/${app.blogsId}`}
+                    />
+                    <AppCard
+                      title="準備中"
+                      eyeCatch={IMAGE_URLS.UNKNOWN}
+                      link=""
+                    />
+                  </>
                 )
               })}
             </div>
