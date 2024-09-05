@@ -4,7 +4,10 @@ export const CategoryButtons = ({ category }) => {
     <>
       {category.map(category => {
         return (
-          <button key={category.id} className="mx-0.5 btn btn-xs p-0.5 ">
+          <button
+            className="mx-0.5 btn btn-sm p-1 shadow-md font-sans"
+            key={category.id}
+          >
             {category.name}
           </button>
         )
