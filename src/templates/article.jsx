@@ -43,7 +43,7 @@ const ArticlePost = ({ data, location }) => {
 
       <div className="w-full  p-10 flex justify-center ">
         <Link to="/blogIndex">
-          <div className="btn  btn-secondary btn-sm my-5">記事の一覧に戻る</div>
+          <div className="btn  btn-sm my-5 shadow-md">記事の一覧に戻る</div>
         </Link>
       </div>
     </Layout>
