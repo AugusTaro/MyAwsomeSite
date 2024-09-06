@@ -83,5 +83,14 @@ module.exports = {
         icon: `src/images/アイコン.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [`G-${process.env.STREAM_ID}`], // 控えておいた、測定IDを記載します。
+        pluginConfig: {
+          head: true, // headタグに記載されるようにコンフィグを設定します。
+        },
+      },
+    },
   ],
 }
