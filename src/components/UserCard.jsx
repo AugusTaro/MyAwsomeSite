@@ -12,7 +12,7 @@ export const UserCard = () => {
           className="rounded-full w-32 mt-2"
         />
 
-        <h1 className="card-title font-serif">エクスプロージョン/eXplosion</h1>
+        <h1 className="card-title font-serif">オーガスタロウ/Augustaro</h1>
 
         <div className="w-50">
           <div className="flex justify-between ">
@@ -42,12 +42,12 @@ export const UserCard = () => {
       </div>
       <div className="card-body  py-5">
         <h2 className="card-title font-serif text-[#a1db44] ">
-          Who is eXplosion？
+          Who is Augustaro？
         </h2>
         <h2>
-          東京で働くSE3年目です。
+          社会人4年目の益荒男です。
           <br />
-          React開発の魅力に取り憑かれ毎日朝から開発してます！朝の冷水シャワーが趣味です。
+          Go,Ts勉強中！冷水を浴びるのが好きです。
           <br />
           よろしくお願いします⊂( `ᾥ´ )っ
         </h2>
