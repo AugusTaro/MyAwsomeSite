@@ -16,13 +16,13 @@ module.exports = {
   siteMetadata: {
     title: `オーガスタロウの館`,
     author: {
-      name: `水島エクスプロージョン`,
+      name: `オーガスタロウ`,
       summary: `東京で個人開発してます!。MacBookのキーボードタッチパッドが好きです。`,
     },
     description: `個人開発に関するネタを中心に記事を書いています。`,
     siteUrl: `https://augustaro.com`,
     social: {
-      twitter: `eXplosion_dev`,
+      twitter: `Augus_taro_`,
     },
   },
   plugins: [
