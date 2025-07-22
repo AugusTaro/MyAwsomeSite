@@ -3,8 +3,8 @@ import React from "react"
 const RetroContentCard = ({ title, describe, link }) => {
   const retroStyles = {
     container: {
-      border: '2px solid #000000',
-      backgroundColor: '#ffffcc',
+      border: '2px solid #808080',
+      backgroundColor: '#f5f5e6',
       padding: '15px',
       margin: '15px 0',
       boxShadow: '3px 3px 0px #666666'

@@ -36,13 +36,12 @@ const OldPage = ({ data }) => {
       paddingLeft: '10px'
     },
     construction: {
-      backgroundColor: '#ff6600',
-      color: '#ffffff',
+      backgroundColor: '#dda500',
+      color: '#000000',
       padding: '10px',
       textAlign: 'center',
-      border: '2px solid #000000',
-      fontWeight: 'bold',
-      animation: 'blink 1.5s infinite'
+      border: '2px inset #cccccc',
+      fontWeight: 'bold'
     }
   }
 

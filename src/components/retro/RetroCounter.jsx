@@ -19,12 +19,12 @@ const RetroCounter = () => {
 
   const counterStyles = {
     container: {
-      backgroundColor: '#ffffcc',
+      backgroundColor: '#f0f0e6',
       border: '2px inset #cccccc',
       padding: '15px',
       margin: '20px 0',
       textAlign: 'center',
-      fontFamily: 'Arial, sans-serif'
+      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
     },
     title: {
       fontSize: '16px',
