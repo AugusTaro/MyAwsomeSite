@@ -3,13 +3,13 @@ import React from "react"
 const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
   const retroStyles = {
     body: {
-      fontFamily: 'Times New Roman, serif',
-      backgroundColor: '#f0f0f0',
+      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace, "Courier New", Arial, sans-serif',
+      backgroundColor: '#c0c0c0',
       color: '#000000',
       margin: 0,
       padding: '20px',
-      fontSize: '14px',
-      lineHeight: '1.4'
+      fontSize: '12px',
+      lineHeight: '1.3'
     },
     container: {
       maxWidth: '800px',
@@ -25,15 +25,16 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       paddingBottom: '15px'
     },
     title: {
-      fontSize: '24px',
-      fontWeight: 'bold',
+      fontSize: '18px',
+      fontWeight: 'normal',
       margin: '10px 0',
-      color: '#000080'
+      color: '#000080',
+      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
     },
     blinking: {
-      animation: 'blink 1s infinite',
-      color: '#ff0000',
-      fontWeight: 'bold'
+      animation: 'blink 3s infinite',
+      color: '#800080',
+      fontWeight: 'normal'
     },
     link: {
       color: '#0000ff',
@@ -64,11 +65,16 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
         {`
           @keyframes blink {
             0% { opacity: 1; }
-            50% { opacity: 0; }
+            70% { opacity: 1; }
+            80% { opacity: 0.3; }
+            90% { opacity: 1; }
             100% { opacity: 1; }
           }
           a:visited {
             color: #800080;
+          }
+          * {
+            font-family: "MS Gothic", "ＭＳ ゴシック", monospace, "Courier New", Arial, sans-serif !important;
           }
         `}
       </style>
