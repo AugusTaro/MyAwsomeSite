@@ -6,7 +6,7 @@ const RetroUserCard = () => {
   const retroStyles = {
     container: {
       border: '3px outset #cccccc',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#f8f8f0',
       padding: '20px',
       margin: '20px 0',
       boxShadow: '5px 5px 0px #999999'
@@ -50,7 +50,7 @@ const RetroUserCard = () => {
       textAlign: 'left'
     },
     linkSection: {
-      backgroundColor: '#f0f0f0',
+      backgroundColor: '#eeeedc',
       border: '2px inset #cccccc',
       padding: '10px',
       margin: '15px 0'

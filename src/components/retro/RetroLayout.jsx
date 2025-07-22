@@ -14,8 +14,8 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
     container: {
       maxWidth: '800px',
       margin: '0 auto',
-      backgroundColor: '#ffffff',
-      border: '2px solid #000000',
+      backgroundColor: '#f5f5dc',
+      border: '2px inset #808080',
       padding: '20px'
     },
     header: {
