@@ -46,13 +46,15 @@ const RetroContentCard = ({ title, describe, link }) => {
       color: '#800080'
     },
     construction: {
-      backgroundColor: '#ffff00',
-      border: '1px solid #ff0000',
-      padding: '5px',
+      backgroundColor: '#fffacd',
+      border: '2px inset #c0c0c0',
+      padding: '8px',
       textAlign: 'center',
-      fontSize: '11px',
-      margin: '5px 0',
-      fontWeight: 'bold'
+      fontSize: '10px',
+      margin: '10px 0',
+      fontWeight: 'normal',
+      color: '#000080',
+      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
     }
   }
 
@@ -78,7 +80,7 @@ const RetroContentCard = ({ title, describe, link }) => {
       </div>
       
       <div style={retroStyles.construction}>
-        工事中 随時更新予定 工事中
+        [ Under Construction ] コンテンツ準備中です [ 1999.12.31 更新 ]
       </div>
     </div>
   )
