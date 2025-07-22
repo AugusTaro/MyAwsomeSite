@@ -36,12 +36,14 @@ const OldPage = ({ data }) => {
       paddingLeft: '10px'
     },
     construction: {
-      backgroundColor: '#dda500',
-      color: '#000000',
-      padding: '10px',
+      backgroundColor: '#fffacd',
+      color: '#000080',
+      padding: '12px',
       textAlign: 'center',
-      border: '2px inset #cccccc',
-      fontWeight: 'bold'
+      border: '3px inset #c0c0c0',
+      fontWeight: 'normal',
+      fontSize: '11px',
+      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
     }
   }
 
@@ -62,7 +64,8 @@ const OldPage = ({ data }) => {
         <RetroCounter />
 
         <div style={retroStyles.construction}>
-          このページは実験的なレトロデザインページです
+          ※ このページは実験的なレトロデザインページです ※<br />
+          Last Updated: 1999/12/31 23:59 JST
         </div>
 
         <RetroUserCard />
@@ -90,19 +93,23 @@ const OldPage = ({ data }) => {
 
         <div style={{
           backgroundColor: '#e0e0e0',
-          border: '1px inset #cccccc',
+          border: '2px inset #cccccc',
           padding: '15px',
-          textAlign: 'center'
+          textAlign: 'center',
+          fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
         }}>
-          <p style={{ fontSize: '12px', margin: '5px 0' }}>
-            このサイトは<strong>Internet Explorer 4.0</strong>以上、<strong>Netscape Navigator 4.0</strong>以上でご覧ください。
+          <p style={{ fontSize: '10px', margin: '8px 0', color: '#000080' }}>
+            推奨環境: Internet Explorer 4.0以上 / Netscape Navigator 4.0以上
           </p>
-          <p style={{ fontSize: '12px', margin: '5px 0' }}>
-            画面解像度 <strong>800×600</strong> 以上を推奨します。
+          <p style={{ fontSize: '10px', margin: '8px 0', color: '#000080' }}>
+            解像度: 800x600以上 / 256色以上 / JavaScript有効
           </p>
-          <p style={{ fontSize: '11px', margin: '5px 0', color: '#666666' }}>
-            ※このページは現代のブラウザでも正常に動作します
+          <p style={{ fontSize: '9px', margin: '8px 0', color: '#666666' }}>
+            このページのデザインは1999年当時のWebサイトを再現しています
           </p>
+          <div style={{ fontSize: '9px', color: '#800080', marginTop: '10px' }}>
+            Webmaster: augustaro@example.com | Since 1999.01.01
+          </div>
         </div>
       </RetroLayout>
     </>
