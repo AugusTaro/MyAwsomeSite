@@ -63,7 +63,7 @@ const OldPage = ({ data }) => {
         <RetroCounter />
 
         <div style={retroStyles.construction}>
-          ⚠️ このページは実験的なレトロデザインページです ⚠️
+          このページは実験的なレトロデザインページです
         </div>
 
         <RetroUserCard />

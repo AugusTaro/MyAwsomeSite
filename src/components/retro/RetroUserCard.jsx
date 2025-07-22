@@ -13,20 +13,21 @@ const RetroUserCard = () => {
     },
     table: {
       width: '100%',
-      border: '1px solid #000000',
+      border: '2px inset #808080',
       borderCollapse: 'collapse',
-      fontFamily: 'Arial, sans-serif'
+      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace',
+      fontSize: '11px'
     },
     th: {
-      backgroundColor: '#cccccc',
-      border: '1px solid #000000',
-      padding: '8px',
+      backgroundColor: '#c0c0c0',
+      border: '1px inset #808080',
+      padding: '6px',
       textAlign: 'center',
-      fontWeight: 'bold'
+      fontWeight: 'normal'
     },
     td: {
-      border: '1px solid #000000',
-      padding: '8px',
+      border: '1px inset #808080',
+      padding: '6px',
       textAlign: 'center'
     },
     profileImage: {
@@ -66,8 +67,8 @@ const RetroUserCard = () => {
       margin: '0 10px'
     },
     blinking: {
-      animation: 'blink 1s infinite',
-      color: '#ff0000'
+      animation: 'blink 5s infinite',
+      color: '#800080'
     }
   }
 

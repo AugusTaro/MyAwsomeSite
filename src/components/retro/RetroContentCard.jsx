@@ -42,8 +42,8 @@ const RetroContentCard = ({ title, describe, link }) => {
       backgroundColor: '#dddddd'
     },
     blinking: {
-      animation: 'blink 1s infinite',
-      color: '#ff0000'
+      animation: 'blink 6s infinite',
+      color: '#800080'
     },
     construction: {
       backgroundColor: '#ffff00',
@@ -78,7 +78,7 @@ const RetroContentCard = ({ title, describe, link }) => {
       </div>
       
       <div style={retroStyles.construction}>
-        <span style={retroStyles.blinking}>工事中</span> 随時更新予定 <span style={retroStyles.blinking}>工事中</span>
+        工事中 随時更新予定 工事中
       </div>
     </div>
   )

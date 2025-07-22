@@ -42,7 +42,7 @@ const RetroCounter = () => {
       fontSize: '18px'
     },
     blinking: {
-      animation: 'blink 1s infinite',
+      animation: 'blink 4s infinite',
       color: '#ff6600'
     },
     gif: {
@@ -50,7 +50,7 @@ const RetroCounter = () => {
       height: '20px',
       display: 'inline-block',
       backgroundColor: '#ff0000',
-      animation: 'rotate 2s infinite linear'
+      animation: 'rotate 8s infinite linear'
     }
   }
 
@@ -74,7 +74,7 @@ const RetroCounter = () => {
         本日 <span style={counterStyles.number}>{todayCount}</span>人目のお客様です！
       </div>
       <div style={counterStyles.counter}>
-        <span style={counterStyles.blinking}>♪ あなたのご訪問をお待ちしております ♪</span>
+        ♪ あなたのご訪問をお待ちしております ♪
       </div>
     </div>
   )
