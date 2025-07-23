@@ -57,7 +57,7 @@ const OldPage = ({ data }) => {
       <RetroLayout title="オーガスタロウの館">
         <div style={retroStyles.marquee}>
           <marquee behavior="scroll" direction="left" scrollamount="3">
-            ★★★ Welcome to Augustaro's Retro Homepage! ようこそオーガスタロウの館へ！ ★★★
+            ★★★ Welcome to Augustaro's YAKATA!! ようこそオーガスタロウの館へ！ ★★★
           </marquee>
         </div>
 

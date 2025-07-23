@@ -86,7 +86,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       <div style={retroStyles.container}>
         <div style={retroStyles.header}>
           <h1 style={retroStyles.title}>{title}へようこそ</h1>
-          <div style={retroStyles.blinking}>★ Welcome to Retro Web ★</div>
+          <div style={retroStyles.blinking}>★ Welcome to Augustaro's YAKATA ★</div>
         </div>
         
         {children}

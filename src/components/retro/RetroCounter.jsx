@@ -69,7 +69,7 @@ const RetroCounter = () => {
         `}
       </style>
       <div style={counterStyles.title}>
-        <span style={counterStyles.blinking}>★</span> アクセスカウンター <span style={counterStyles.blinking}>★</span>
+        <span style={counterStyles.blinking}>★</span> ようこそ！！ <span style={counterStyles.blinking}>★</span>
       </div>
       <div style={counterStyles.counter}>
         総訪問者数: <span style={counterStyles.number}>{visitorCount.toLocaleString()}</span>人
