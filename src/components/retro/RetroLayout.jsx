@@ -10,7 +10,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       backgroundColor: '#c0c0c0',
       color: '#000000',
       margin: 0,
-      padding: isPC ? '0' : '20px',
+      padding: isPC ? '10px' : '20px',
       fontSize: '13px',
       lineHeight: '1.4'
     },
@@ -31,16 +31,11 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       padding: '20px'
     },
     header: isPC ? {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 1000,
       backgroundColor: '#f5f5dc',
       border: '2px inset #808080',
       textAlign: 'center',
       padding: '15px',
-      marginBottom: 0,
+      marginBottom: '10px',
       borderBottom: '2px solid #000000'
     } : {
       textAlign: 'center',
@@ -49,7 +44,6 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       paddingBottom: '15px'
     },
     contentWrapper: isPC ? {
-      marginTop: '120px', // ヘッダーの高さ分だけマージンを追加
       display: 'table',
       width: '100%',
       backgroundColor: '#f5f5dc',
