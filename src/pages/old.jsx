@@ -11,12 +11,21 @@ const OldPage = ({ data }) => {
 
   const retroStyles = {
     marquee: {
-      backgroundColor: '#ffff00',
-      border: '1px solid #000000',
-      padding: '5px',
+      backgroundColor: '#ff0000',
+      border: '3px solid #000000',
+      padding: '8px',
       margin: '10px 0',
-      fontSize: '14px',
-      fontWeight: 'bold'
+      fontSize: '16px',
+      fontWeight: 'bold',
+      animation: 'flashBackground 1s infinite alternate',
+      boxShadow: '0 0 20px #ff00ff'
+    },
+    marqueeText: {
+      color: '#ffff00',
+      textShadow: '3px 3px 0px #0000ff, -2px -2px 0px #00ff00, 0 0 10px #ffffff',
+      WebkitTextStroke: '1px #000000',
+      animation: 'flashText 0.8s infinite alternate',
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     },
     contentGrid: {
       display: 'table',
@@ -49,6 +58,24 @@ const OldPage = ({ data }) => {
 
   return (
     <>
+      <style>
+        {`
+          @keyframes flashBackground {
+            0% { background-color: #ff0000; }
+            25% { background-color: #00ff00; }
+            50% { background-color: #0000ff; }
+            75% { background-color: #ff00ff; }
+            100% { background-color: #ffff00; }
+          }
+          @keyframes flashText {
+            0% { color: #ffff00; text-shadow: 3px 3px 0px #0000ff, -2px -2px 0px #00ff00, 0 0 10px #ffffff; }
+            25% { color: #ff0000; text-shadow: 3px 3px 0px #ffff00, -2px -2px 0px #0000ff, 0 0 10px #00ff00; }
+            50% { color: #00ff00; text-shadow: 3px 3px 0px #ff0000, -2px -2px 0px #ffff00, 0 0 10px #0000ff; }
+            75% { color: #0000ff; text-shadow: 3px 3px 0px #00ff00, -2px -2px 0px #ff0000, 0 0 10px #ffff00; }
+            100% { color: #ff00ff; text-shadow: 3px 3px 0px #ffff00, -2px -2px 0px #00ff00, 0 0 10px #ff0000; }
+          }
+        `}
+      </style>
       <Seo
         title="オーガスタロウの館 - レトロver"
         description="90年代風のホームページです。懐かしいWebデザインでお楽しみください。"
@@ -57,7 +84,9 @@ const OldPage = ({ data }) => {
       <RetroLayout title="オーガスタロウの館">
         <div style={retroStyles.marquee}>
           <marquee behavior="scroll" direction="left" scrollamount="3">
-            ★★★ Welcome to Augustaro's YAKATA!! ようこそオーガスタロウの館へ！ ★★★
+            <span style={retroStyles.marqueeText}>
+              ★★★ Welcome to Augustaro's YAKATA!! ようこそオーガスタロウの館へ！ ★★★
+            </span>
           </marquee>
         </div>
 
