@@ -10,7 +10,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       backgroundColor: '#c0c0c0',
       color: '#000000',
       margin: 0,
-      padding: isPC ? '10px' : '20px',
+      padding: isPC ? '0' : '20px',
       fontSize: '13px',
       lineHeight: '1.4'
     },
@@ -19,9 +19,9 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       maxWidth: 'none',
       margin: 0,
       backgroundColor: '#f5f5dc',
-      border: '2px inset #808080',
-      padding: '10px',
-      display: 'table',
+      border: 'none',
+      padding: '0',
+      display: 'block',
       height: 'auto'
     } : {
       maxWidth: '800px',
@@ -30,6 +30,32 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       border: '2px inset #808080',
       padding: '20px'
     },
+    header: isPC ? {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 1000,
+      backgroundColor: '#f5f5dc',
+      border: '2px inset #808080',
+      textAlign: 'center',
+      padding: '15px',
+      marginBottom: 0,
+      borderBottom: '2px solid #000000'
+    } : {
+      textAlign: 'center',
+      marginBottom: '20px',
+      borderBottom: '1px solid #000000',
+      paddingBottom: '15px'
+    },
+    contentWrapper: isPC ? {
+      marginTop: '120px', // ヘッダーの高さ分だけマージンを追加
+      display: 'table',
+      width: '100%',
+      backgroundColor: '#f5f5dc',
+      border: '2px inset #808080',
+      padding: '10px'
+    } : {},
     mainContent: isPC ? {
       display: 'table-cell',
       width: '70%',
@@ -44,12 +70,6 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       border: '2px inset #cccccc',
       verticalAlign: 'top'
     } : { display: 'none' },
-    header: {
-      textAlign: 'center',
-      marginBottom: '20px',
-      borderBottom: '1px solid #000000',
-      paddingBottom: '15px'
-    },
     title: {
       fontSize: '24px',
       fontWeight: 'bold',
@@ -116,7 +136,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
         </div>
         
         {isPC ? (
-          <>
+          <div style={retroStyles.contentWrapper}>
             <div style={retroStyles.mainContent}>
               {children}
             </div>
@@ -173,7 +193,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ) : (
           children
         )}
