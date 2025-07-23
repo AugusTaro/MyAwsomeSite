@@ -25,16 +25,21 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       paddingBottom: '15px'
     },
     title: {
-      fontSize: '20px',
-      fontWeight: 'normal',
-      margin: '10px 0',
-      color: '#000080',
-      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
+      fontSize: '24px',
+      fontWeight: 'bold',
+      margin: '15px 0',
+      color: '#ff0000',
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy',
+      textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00, 1px -1px 0px #ffff00, -1px 1px 0px #ffff00, 1px 1px 0px #ffff00',
+      WebkitTextStroke: '1px #000000',
+      textStroke: '1px #000000'
     },
     blinking: {
       animation: 'blink 3s infinite',
-      color: '#800080',
-      fontWeight: 'normal'
+      color: '#00ff00',
+      fontWeight: 'bold',
+      textShadow: '2px 2px 0px #ff00ff, -1px -1px 0px #000000',
+      WebkitTextStroke: '1px #000000'
     },
     link: {
       color: '#0000ff',
