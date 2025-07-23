@@ -23,6 +23,7 @@ const OldPage = ({ data }) => {
     marqueeText: {
       color: '#ffff00',
       textShadow: '2px 2px 0px #0000ff, -1px -1px 0px #000000',
+      WebkitTextStroke: '1px #000000',
       animation: 'flashText 2.5s infinite alternate',
       fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     },

@@ -32,15 +32,12 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
     },
     header: isPC ? {
       backgroundColor: '#f5f5dc',
-      border: '2px inset #808080',
       textAlign: 'center',
       padding: '15px',
-      marginBottom: '10px',
-      borderBottom: '2px solid #000000'
+      marginBottom: '10px'
     } : {
       textAlign: 'center',
       marginBottom: '20px',
-      borderBottom: '1px solid #000000',
       paddingBottom: '15px'
     },
     contentWrapper: isPC ? {
@@ -70,13 +67,16 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       margin: '15px 0',
       color: '#ff0000',
       fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy',
-      textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00, 1px -1px 0px #ffff00, -1px 1px 0px #ffff00, 1px 1px 0px #ffff00'
+      textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00, 1px -1px 0px #ffff00, -1px 1px 0px #ffff00, 1px 1px 0px #ffff00',
+      WebkitTextStroke: '1px #000000',
+      textStroke: '1px #000000'
     },
     blinking: {
       animation: 'blink 3s infinite',
       color: '#00ff00',
       fontWeight: 'bold',
-      textShadow: '2px 2px 0px #ff00ff, -1px -1px 0px #000000'
+      textShadow: '2px 2px 0px #ff00ff, -1px -1px 0px #000000',
+      WebkitTextStroke: '1px #000000'
     },
     link: {
       color: '#0000ff',

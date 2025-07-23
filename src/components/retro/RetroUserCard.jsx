@@ -42,7 +42,8 @@ const RetroUserCard = () => {
       color: '#ff0000',
       textAlign: 'center',
       margin: '15px 0',
-      textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00'
+      textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00',
+      WebkitTextStroke: '1px #000000'
     },
     description: {
       fontSize: '14px',
@@ -61,7 +62,8 @@ const RetroUserCard = () => {
       fontWeight: 'bold',
       color: '#00ff00',
       marginBottom: '10px',
-      textShadow: '2px 2px 0px #ff00ff, -1px -1px 0px #000000'
+      textShadow: '2px 2px 0px #ff00ff, -1px -1px 0px #000000',
+      WebkitTextStroke: '1px #000000'
     },
     link: {
       color: '#0000ff',
