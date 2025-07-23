@@ -31,7 +31,8 @@ const RetroCounter = () => {
       fontWeight: 'bold',
       color: '#ff0000',
       marginBottom: '10px',
-      textShadow: '2px 2px 0px #00ff00, -1px -1px 0px #ffff00'
+      textShadow: '2px 2px 0px #00ff00, -1px -1px 0px #ffff00',
+      WebkitTextStroke: '1px #000000'
     },
     counter: {
       fontSize: '14px',
@@ -41,7 +42,8 @@ const RetroCounter = () => {
       color: '#0000ff',
       fontWeight: 'bold',
       fontSize: '20px',
-      textShadow: '2px 2px 0px #ffff00, -1px -1px 0px #ff0000'
+      textShadow: '2px 2px 0px #ffff00, -1px -1px 0px #ff0000',
+      WebkitTextStroke: '1px #000000'
     },
     blinking: {
       animation: 'blink 4s infinite',
