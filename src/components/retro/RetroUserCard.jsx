@@ -33,7 +33,8 @@ const RetroUserCard = () => {
     profileImage: {
       display: 'block',
       margin: '0 auto 15px',
-      border: '3px inset #cccccc'
+      border: '3px inset #cccccc',
+      borderRadius: '10px'
     },
     title: {
       fontSize: '20px',
@@ -84,9 +85,11 @@ const RetroUserCard = () => {
       <StaticImage
         src="../../images/MyIcon.jpg"
         alt="UserIcon"
-        width={120}
-        height={120}
+        width={150}
+        height={150}
         style={retroStyles.profileImage}
+        placeholder="blurred"
+        layout="fixed"
       />
 
       <table style={retroStyles.table}>
