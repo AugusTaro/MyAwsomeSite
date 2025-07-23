@@ -70,16 +70,13 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       margin: '15px 0',
       color: '#ff0000',
       fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy',
-      textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00, 1px -1px 0px #ffff00, -1px 1px 0px #ffff00, 1px 1px 0px #ffff00',
-      WebkitTextStroke: '1px #000000',
-      textStroke: '1px #000000'
+      textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00, 1px -1px 0px #ffff00, -1px 1px 0px #ffff00, 1px 1px 0px #ffff00'
     },
     blinking: {
       animation: 'blink 3s infinite',
       color: '#00ff00',
       fontWeight: 'bold',
-      textShadow: '2px 2px 0px #ff00ff, -1px -1px 0px #000000',
-      WebkitTextStroke: '1px #000000'
+      textShadow: '2px 2px 0px #ff00ff, -1px -1px 0px #000000'
     },
     link: {
       color: '#0000ff',
@@ -131,9 +128,6 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
         
         {isPC ? (
           <div style={retroStyles.contentWrapper}>
-            <div style={retroStyles.mainContent}>
-              {children}
-            </div>
             <div style={retroStyles.sidebar}>
               <div style={{ ...retroStyles.title, fontSize: '16px', marginBottom: '15px' }}>
                 <span style={retroStyles.blinking}>★</span> サイドメニュー <span style={retroStyles.blinking}>★</span>
@@ -186,6 +180,9 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
                   ※ このサイトはInternet Explorer 4.0以上でご覧ください
                 </div>
               </div>
+            </div>
+            <div style={retroStyles.mainContent}>
+              {children}
             </div>
           </div>
         ) : (

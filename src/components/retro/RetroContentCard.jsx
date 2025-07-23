@@ -15,8 +15,7 @@ const RetroContentCard = ({ title, describe, link }) => {
       color: '#ff0000',
       textAlign: 'center',
       margin: '0 0 10px 0',
-      textShadow: '2px 2px 0px #00ff00, -1px -1px 0px #ffff00',
-      WebkitTextStroke: '1px #000000'
+      textShadow: '2px 2px 0px #00ff00, -1px -1px 0px #ffff00'
     },
     description: {
       fontSize: '12px',
