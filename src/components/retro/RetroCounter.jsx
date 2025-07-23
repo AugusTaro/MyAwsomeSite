@@ -27,19 +27,23 @@ const RetroCounter = () => {
       fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     },
     title: {
-      fontSize: '16px',
+      fontSize: '18px',
       fontWeight: 'bold',
-      color: '#000080',
-      marginBottom: '10px'
+      color: '#ff0000',
+      marginBottom: '10px',
+      textShadow: '2px 2px 0px #00ff00, -1px -1px 0px #ffff00',
+      WebkitTextStroke: '1px #000000'
     },
     counter: {
       fontSize: '14px',
       margin: '5px 0'
     },
     number: {
-      color: '#ff0000',
+      color: '#0000ff',
       fontWeight: 'bold',
-      fontSize: '18px'
+      fontSize: '20px',
+      textShadow: '2px 2px 0px #ffff00, -1px -1px 0px #ff0000',
+      WebkitTextStroke: '1px #000000'
     },
     blinking: {
       animation: 'blink 4s infinite',

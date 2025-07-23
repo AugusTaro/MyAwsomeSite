@@ -10,12 +10,13 @@ const RetroContentCard = ({ title, describe, link }) => {
       boxShadow: '3px 3px 0px #666666'
     },
     title: {
-      fontSize: '16px',
+      fontSize: '18px',
       fontWeight: 'bold',
-      color: '#000080',
+      color: '#ff0000',
       textAlign: 'center',
       margin: '0 0 10px 0',
-      textDecoration: 'underline'
+      textShadow: '2px 2px 0px #00ff00, -1px -1px 0px #ffff00',
+      WebkitTextStroke: '1px #000000'
     },
     description: {
       fontSize: '12px',
