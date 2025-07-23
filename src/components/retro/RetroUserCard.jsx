@@ -15,7 +15,7 @@ const RetroUserCard = () => {
       width: '100%',
       border: '2px inset #808080',
       borderCollapse: 'collapse',
-      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace',
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy',
       fontSize: '11px'
     },
     th: {

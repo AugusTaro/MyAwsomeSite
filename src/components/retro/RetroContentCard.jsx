@@ -54,7 +54,7 @@ const RetroContentCard = ({ title, describe, link }) => {
       margin: '10px 0',
       fontWeight: 'normal',
       color: '#000080',
-      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     }
   }
 

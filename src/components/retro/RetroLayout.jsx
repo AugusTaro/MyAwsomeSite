@@ -3,13 +3,13 @@ import React from "react"
 const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
   const retroStyles = {
     body: {
-      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace, "Courier New", Arial, sans-serif',
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy, sans-serif',
       backgroundColor: '#c0c0c0',
       color: '#000000',
       margin: 0,
       padding: '20px',
-      fontSize: '12px',
-      lineHeight: '1.3'
+      fontSize: '13px',
+      lineHeight: '1.4'
     },
     container: {
       maxWidth: '800px',
@@ -25,11 +25,11 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       paddingBottom: '15px'
     },
     title: {
-      fontSize: '18px',
+      fontSize: '20px',
       fontWeight: 'normal',
       margin: '10px 0',
       color: '#000080',
-      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     },
     blinking: {
       animation: 'blink 3s infinite',
@@ -74,7 +74,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
             color: #800080;
           }
           * {
-            font-family: "MS Gothic", "ＭＳ ゴシック", monospace, "Courier New", Arial, sans-serif !important;
+            font-family: "創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy, sans-serif !important;
           }
         `}
       </style>
