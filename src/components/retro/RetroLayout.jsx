@@ -1,23 +1,49 @@
 import React from "react"
+import useWindowSize from "../../hooks/useWindowSize"
 
 const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
+  const { width } = useWindowSize()
+  const isPC = width >= 1024 // 1024px以上をPC版とする
   const retroStyles = {
     body: {
       fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy, sans-serif',
       backgroundColor: '#c0c0c0',
       color: '#000000',
       margin: 0,
-      padding: '20px',
+      padding: isPC ? '10px' : '20px',
       fontSize: '13px',
       lineHeight: '1.4'
     },
-    container: {
+    container: isPC ? {
+      width: '100%',
+      maxWidth: 'none',
+      margin: 0,
+      backgroundColor: '#f5f5dc',
+      border: '2px inset #808080',
+      padding: '10px',
+      display: 'table',
+      height: 'auto'
+    } : {
       maxWidth: '800px',
       margin: '0 auto',
       backgroundColor: '#f5f5dc',
       border: '2px inset #808080',
       padding: '20px'
     },
+    mainContent: isPC ? {
+      display: 'table-cell',
+      width: '70%',
+      padding: '20px',
+      verticalAlign: 'top'
+    } : {},
+    sidebar: isPC ? {
+      display: 'table-cell',
+      width: '30%',
+      padding: '20px',
+      backgroundColor: '#e6e6e6',
+      border: '2px inset #cccccc',
+      verticalAlign: 'top'
+    } : { display: 'none' },
     header: {
       textAlign: 'center',
       marginBottom: '20px',
@@ -89,7 +115,68 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
           <div style={retroStyles.blinking}>★ Welcome to Augustaro's YAKATA ★</div>
         </div>
         
-        {children}
+        {isPC ? (
+          <>
+            <div style={retroStyles.mainContent}>
+              {children}
+            </div>
+            <div style={retroStyles.sidebar}>
+              <div style={{ ...retroStyles.title, fontSize: '16px', marginBottom: '15px' }}>
+                <span style={retroStyles.blinking}>★</span> サイドメニュー <span style={retroStyles.blinking}>★</span>
+              </div>
+              
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#000080' }}>
+                  ◆ サイト情報
+                </div>
+                <div style={{ fontSize: '10px', lineHeight: '1.5' }}>
+                  ・開設日: 1999年1月1日<br />
+                  ・管理人: オーガスタロウ<br />
+                  ・更新頻度: 気分次第<br />
+                  ・推奨ブラウザ: IE4.0以上
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#000080' }}>
+                  ◆ おすすめリンク
+                </div>
+                <div style={{ fontSize: '10px', lineHeight: '1.8' }}>
+                  <a href="#" style={retroStyles.link}>・阿部寛のホームページ</a><br />
+                  <a href="#" style={retroStyles.link}>・90年代風サイト集</a><br />
+                  <a href="#" style={retroStyles.link}>・レトロWeb同盟</a><br />
+                  <a href="#" style={retroStyles.link}>・懐かしのGIFアニメ</a>
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#000080' }}>
+                  ◆ 最近の更新
+                </div>
+                <div style={{ fontSize: '9px', lineHeight: '1.5' }}>
+                  1999/12/31: レトロページ追加<br />
+                  1999/12/25: カウンター設置<br />
+                  1999/12/20: プロフィール更新<br />
+                  1999/12/15: デザイン変更
+                </div>
+              </div>
+
+              <div style={{
+                backgroundColor: '#ffffcc',
+                border: '1px solid #ff0000',
+                padding: '8px',
+                fontSize: '9px',
+                textAlign: 'center'
+              }}>
+                <div style={{ color: '#ff0000', fontWeight: 'bold' }}>
+                  ※ このサイトはInternet Explorer 4.0以上でご覧ください
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          children
+        )}
         
         <hr style={retroStyles.hr} />
         <div style={retroStyles.footer}>

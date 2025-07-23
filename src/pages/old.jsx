@@ -11,20 +11,20 @@ const OldPage = ({ data }) => {
 
   const retroStyles = {
     marquee: {
-      backgroundColor: '#ff0000',
-      border: '3px solid #000000',
+      backgroundColor: '#ff6666',
+      border: '2px solid #000000',
       padding: '8px',
       margin: '10px 0',
       fontSize: '16px',
       fontWeight: 'bold',
-      animation: 'flashBackground 1s infinite alternate',
-      boxShadow: '0 0 20px #ff00ff'
+      animation: 'flashBackground 2s infinite alternate',
+      boxShadow: '0 0 10px #cccccc'
     },
     marqueeText: {
       color: '#ffff00',
-      textShadow: '3px 3px 0px #0000ff, -2px -2px 0px #00ff00, 0 0 10px #ffffff',
+      textShadow: '2px 2px 0px #0000ff, -1px -1px 0px #000000',
       WebkitTextStroke: '1px #000000',
-      animation: 'flashText 0.8s infinite alternate',
+      animation: 'flashText 2.5s infinite alternate',
       fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     },
     contentGrid: {
@@ -61,18 +61,14 @@ const OldPage = ({ data }) => {
       <style>
         {`
           @keyframes flashBackground {
-            0% { background-color: #ff0000; }
-            25% { background-color: #00ff00; }
-            50% { background-color: #0000ff; }
-            75% { background-color: #ff00ff; }
-            100% { background-color: #ffff00; }
+            0% { background-color: #ff6666; }
+            50% { background-color: #6666ff; }
+            100% { background-color: #ff6666; }
           }
           @keyframes flashText {
-            0% { color: #ffff00; text-shadow: 3px 3px 0px #0000ff, -2px -2px 0px #00ff00, 0 0 10px #ffffff; }
-            25% { color: #ff0000; text-shadow: 3px 3px 0px #ffff00, -2px -2px 0px #0000ff, 0 0 10px #00ff00; }
-            50% { color: #00ff00; text-shadow: 3px 3px 0px #ff0000, -2px -2px 0px #ffff00, 0 0 10px #0000ff; }
-            75% { color: #0000ff; text-shadow: 3px 3px 0px #00ff00, -2px -2px 0px #ff0000, 0 0 10px #ffff00; }
-            100% { color: #ff00ff; text-shadow: 3px 3px 0px #ffff00, -2px -2px 0px #00ff00, 0 0 10px #ff0000; }
+            0% { color: #ffff00; text-shadow: 2px 2px 0px #0000ff, -1px -1px 0px #000000; }
+            50% { color: #ff0000; text-shadow: 2px 2px 0px #ffff00, -1px -1px 0px #000000; }
+            100% { color: #ffff00; text-shadow: 2px 2px 0px #0000ff, -1px -1px 0px #000000; }
           }
         `}
       </style>
