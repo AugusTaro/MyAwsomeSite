@@ -43,7 +43,7 @@ const OldPage = ({ data }) => {
       border: '3px inset #c0c0c0',
       fontWeight: 'normal',
       fontSize: '11px',
-      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     }
   }
 
@@ -96,7 +96,7 @@ const OldPage = ({ data }) => {
           border: '2px inset #cccccc',
           padding: '15px',
           textAlign: 'center',
-          fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
+          fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
         }}>
           <p style={{ fontSize: '10px', margin: '8px 0', color: '#000080' }}>
             推奨環境: Internet Explorer 4.0以上 / Netscape Navigator 4.0以上

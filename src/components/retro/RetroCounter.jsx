@@ -24,7 +24,7 @@ const RetroCounter = () => {
       padding: '15px',
       margin: '20px 0',
       textAlign: 'center',
-      fontFamily: '"MS Gothic", "ＭＳ ゴシック", monospace'
+      fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
     },
     title: {
       fontSize: '16px',
