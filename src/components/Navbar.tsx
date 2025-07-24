@@ -19,8 +19,9 @@ export const Navbar = () => {
           </ul>
         </div>
         <div className="flex-none">
-          <ul className="menu underline">
+          <ul className="menu underline flex-row space-x-4">
             <Link to="/">about me</Link>
+            <Link to="/old">Old ver</Link>
           </ul>
           <ul className="menu menu-horizontal p-0 bg-opacity-0">
             <RxHamburgerMenu

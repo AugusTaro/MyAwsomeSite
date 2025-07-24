@@ -8,6 +8,7 @@ import Prism from "prismjs"
 import Seo from "../components/seo"
 import { formatDateTime } from "../utils/formatDateTime"
 import { CategoryButtons } from "../components/CategoryButtons"
+import DOMPurify from "dompurify"
 
 const ArticlePost = ({ data, location }) => {
   const post = data.microcmsBlogs
@@ -38,7 +39,12 @@ const ArticlePost = ({ data, location }) => {
       </div>
       <div
         className="prose p-5 mx-auto lg:max-w-full font-sans bg-base-200"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ 
+          __html: typeof window !== 'undefined' ? DOMPurify.sanitize(post.content, {
+            ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'u', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'a', 'img', 'blockquote', 'code', 'pre', 'hr'],
+            ALLOWED_ATTR: ['href', 'src', 'alt', 'title', 'class']
+          }) : post.content
+        }}
       ></div>
 
       <div className="w-full  p-10 flex justify-center ">

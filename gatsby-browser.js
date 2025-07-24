@@ -15,8 +15,4 @@ import "./src/styles/global.css"
 export const onRouteUpdate = ({ location }) => {
   Prism.highlightAll()
 }
-export const onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({
-    lang: "ja", // 日本語サイトの場合、"ja"を設定
-  })
-}
+// onRenderBodyはgatsby-ssr.jsで定義する必要があります
