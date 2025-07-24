@@ -10,19 +10,17 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       backgroundColor: '#c0c0c0',
       color: '#000000',
       margin: 0,
-      padding: isPC ? '10px' : '20px',
+      padding: 0,
       fontSize: '13px',
-      lineHeight: '1.4'
+      lineHeight: '1.4',
+      height: '100vh'
     },
     container: isPC ? {
+      display: 'flex',
       width: '100%',
-      maxWidth: 'none',
+      height: '100vh',
       margin: 0,
-      backgroundColor: '#f5f5dc',
-      border: 'none',
-      padding: '0',
-      display: 'block',
-      height: 'auto'
+      padding: 0
     } : {
       maxWidth: '800px',
       margin: '0 auto',
@@ -30,41 +28,42 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       border: '2px inset #808080',
       padding: '20px'
     },
+    sidebar: isPC ? {
+      width: '200px',
+      backgroundColor: '#f5f5dc',
+      padding: '20px',
+      borderRight: '1px solid #000000',
+      boxSizing: 'border-box',
+      height: '100vh',
+      overflow: 'auto'
+    } : { display: 'none' },
+    mainArea: isPC ? {
+      flex: 1,
+      backgroundColor: '#f5f5dc',
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100vh'
+    } : {},
     header: isPC ? {
       backgroundColor: '#f5f5dc',
       textAlign: 'center',
-      padding: '15px',
-      marginBottom: '10px'
+      padding: '10px 20px',
+      borderBottom: '1px solid #000000'
     } : {
       textAlign: 'center',
-      marginBottom: '20px',
-      paddingBottom: '15px'
+      marginBottom: '15px',
+      paddingBottom: '10px'
     },
-    contentWrapper: isPC ? {
-      display: 'table',
-      width: '100%',
-      backgroundColor: '#f5f5dc',
-      border: '2px inset #808080',
-      padding: '10px'
-    } : {},
     mainContent: isPC ? {
-      display: 'table-cell',
-      width: '70%',
-      padding: '20px',
-      verticalAlign: 'top'
+      flex: 1,
+      padding: '15px 20px',
+      backgroundColor: '#f5f5dc',
+      overflow: 'auto'
     } : {},
-    sidebar: isPC ? {
-      display: 'table-cell',
-      width: '30%',
-      padding: '20px',
-      backgroundColor: '#e6e6e6',
-      border: '2px inset #cccccc',
-      verticalAlign: 'top'
-    } : { display: 'none' },
     title: {
-      fontSize: '24px',
+      fontSize: '22px',
       fontWeight: 'bold',
-      margin: '15px 0',
+      margin: '8px 0',
       color: '#ff0000',
       fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy',
       textShadow: '3px 3px 0px #0000ff, -1px -1px 0px #ffff00, 1px -1px 0px #ffff00, -1px 1px 0px #ffff00, 1px 1px 0px #ffff00',
@@ -121,18 +120,10 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
         `}
       </style>
       <div style={retroStyles.container}>
-        <div style={retroStyles.header}>
-          <h1 style={retroStyles.title}>{title}へようこそ</h1>
-          <div style={retroStyles.blinking}>★ Welcome to Augustaro's YAKATA ★</div>
-        </div>
-        
         {isPC ? (
-          <div style={retroStyles.contentWrapper}>
+          <>
+            {/* サイドバー */}
             <div style={retroStyles.sidebar}>
-              <div style={{ ...retroStyles.title, fontSize: '16px', marginBottom: '15px' }}>
-                <span style={retroStyles.blinking}>★</span> サイドメニュー <span style={retroStyles.blinking}>★</span>
-              </div>
-              
               <div style={{ marginBottom: '20px' }}>
                 <div style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#000080' }}>
                   ◆ サイト情報
@@ -181,30 +172,59 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
                 </div>
               </div>
             </div>
-            <div style={retroStyles.mainContent}>
-              {children}
+            
+            {/* メインエリア */}
+            <div style={retroStyles.mainArea}>
+              <div style={retroStyles.header}>
+                <h1 style={retroStyles.title}>{title}</h1>
+                <div style={retroStyles.blinking}>★ Welcome to Augustaro's YAKATA ★</div>
+              </div>
+              <div style={retroStyles.mainContent}>
+                {children}
+                <hr style={retroStyles.hr} />
+                <div style={retroStyles.footer}>
+                  <p>
+                    <span style={retroStyles.blinking}>⚡</span>
+                    {" "}このページは個人的なホームページです{" "}
+                    <span style={retroStyles.blinking}>⚡</span>
+                  </p>
+                  <p>
+                    <a href="mailto:contact@augustaro.com" style={retroStyles.link}>
+                      Webmaster: オーガスタロウ
+                    </a>
+                  </p>
+                </div>
+                <div style={retroStyles.lastUpdate}>
+                  最終更新日: {new Date().toLocaleDateString('ja-JP')}
+                </div>
+              </div>
             </div>
-          </div>
+          </>
         ) : (
-          children
+          <>
+            <div style={retroStyles.header}>
+              <h1 style={retroStyles.title}>{title}</h1>
+              <div style={retroStyles.blinking}>★ Welcome to Augustaro's YAKATA ★</div>
+            </div>
+            {children}
+            <hr style={retroStyles.hr} />
+            <div style={retroStyles.footer}>
+              <p>
+                <span style={retroStyles.blinking}>⚡</span>
+                {" "}このページは個人的なホームページです{" "}
+                <span style={retroStyles.blinking}>⚡</span>
+              </p>
+              <p>
+                <a href="mailto:contact@augustaro.com" style={retroStyles.link}>
+                  Webmaster: オーガスタロウ
+                </a>
+              </p>
+            </div>
+            <div style={retroStyles.lastUpdate}>
+              最終更新日: {new Date().toLocaleDateString('ja-JP')}
+            </div>
+          </>
         )}
-        
-        <hr style={retroStyles.hr} />
-        <div style={retroStyles.footer}>
-          <p>
-            <span style={retroStyles.blinking}>⚡</span>
-            {" "}このページは個人的なホームページです{" "}
-            <span style={retroStyles.blinking}>⚡</span>
-          </p>
-          <p>
-            <a href="mailto:contact@augustaro.com" style={retroStyles.link}>
-              Webmaster: オーガスタロウ
-            </a>
-          </p>
-        </div>
-        <div style={retroStyles.lastUpdate}>
-          最終更新日: {new Date().toLocaleDateString('ja-JP')}
-        </div>
       </div>
     </div>
   )
