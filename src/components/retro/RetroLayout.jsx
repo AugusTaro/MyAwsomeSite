@@ -13,7 +13,8 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       padding: 0,
       fontSize: '13px',
       lineHeight: '1.4',
-      height: '100vh'
+      height: '100vh',
+      overflow: isPC ? 'hidden' : 'auto'
     },
     container: isPC ? {
       display: 'flex',
@@ -61,7 +62,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       overflow: 'auto'
     } : {},
     title: {
-      fontSize: '22px',
+      fontSize: '28px',
       fontWeight: 'bold',
       margin: '8px 0',
       color: '#ff0000',
@@ -88,7 +89,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
     },
     footer: {
       textAlign: 'center',
-      marginTop: '30px',
+      marginTop: '10px',
       fontSize: '12px',
       color: '#666666'
     },
@@ -96,7 +97,8 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
       textAlign: 'right',
       fontSize: '11px',
       color: '#666666',
-      fontStyle: 'italic'
+      fontStyle: 'italic',
+      marginBottom: '0'
     }
   }
 
@@ -141,10 +143,7 @@ const RetroLayout = ({ children, title = "オーガスタロウの館" }) => {
                   ◆ おすすめリンク
                 </div>
                 <div style={{ fontSize: '10px', lineHeight: '1.8' }}>
-                  <a href="#" style={retroStyles.link}>・阿部寛のホームページ</a><br />
-                  <a href="#" style={retroStyles.link}>・90年代風サイト集</a><br />
-                  <a href="#" style={retroStyles.link}>・レトロWeb同盟</a><br />
-                  <a href="#" style={retroStyles.link}>・懐かしのGIFアニメ</a>
+                  <a href="http://abehiroshi.la.coocan.jp/" style={retroStyles.link} target="_blank" rel="noopener noreferrer">・阿部寛のホームページ</a>
                 </div>
               </div>
 
