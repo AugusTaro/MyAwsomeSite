@@ -7,7 +7,10 @@ const RetroContentCard = ({ title, describe, link }) => {
       backgroundColor: '#f5f5e6',
       padding: '15px',
       margin: '15px 0',
-      boxShadow: '3px 3px 0px #666666'
+      boxShadow: '3px 3px 0px #666666',
+      height: '200px',
+      display: 'flex',
+      flexDirection: 'column'
     },
     title: {
       fontSize: '18px',
@@ -22,7 +25,8 @@ const RetroContentCard = ({ title, describe, link }) => {
       fontSize: '12px',
       margin: '10px 0',
       lineHeight: '1.5',
-      textAlign: 'left'
+      textAlign: 'left',
+      flex: 1
     },
     buttonContainer: {
       textAlign: 'center',
@@ -80,9 +84,6 @@ const RetroContentCard = ({ title, describe, link }) => {
         </a>
       </div>
       
-      <div style={retroStyles.construction}>
-        [ Under Construction ] コンテンツ準備中です [ 1999.12.31 更新 ]
-      </div>
     </div>
   )
 }

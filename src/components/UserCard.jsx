@@ -7,7 +7,7 @@ export const UserCard = () => {
     <div className="card bg-base-100   shadow-xl  ">
       <div className="flex flex-col  items-center">
         <StaticImage
-          src={`../images/MyIcon.jpg`}
+          src={`https://images.microcms-assets.io/assets/2c75ba332789475395c0cca2e265d0de/13f97ea87e1849e49d4c9b0297a5af32/water_simple_.png`}
           alt="UserIcon"
           className="rounded-full w-32 mt-2"
         />
@@ -45,9 +45,9 @@ export const UserCard = () => {
           Who is Augustaro？
         </h2>
         <h2>
-          社会人4年目の益荒男です。
+          software engineerの益荒男です。
           <br />
-          Go,Ts勉強中！冷水を浴びるのが好きです。
+          冷水を浴びるのが好きです。
           <br />
           よろしくお願いします⊂( `ᾥ´ )っ
         </h2>
