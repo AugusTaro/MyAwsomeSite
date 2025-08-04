@@ -57,17 +57,37 @@ ENV PATH=$PATH:/usr/local/share/npm-global/bin
 # Set the default shell to zsh rather than sh
 ENV SHELL=/bin/zsh
 
-# Install starship prompt
-RUN sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+# Starship prompt installation removed due to network issues
+# RUN sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
-# Setup zsh without powerline10k
+# Default powerline10k theme
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.2.0/zsh-in-docker.sh)" -- \
   -p git \
   -p fzf \
   -a "source /usr/share/doc/fzf/examples/key-bindings.zsh" \
   -a "source /usr/share/doc/fzf/examples/completion.zsh" \
   -a "export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
-  -a "eval \"\$(starship init zsh)\""
+  -a "alias nippo='~/bin/start-nippo.sh'" \
+  -a "alias startms='~/bin/start-microservice.sh'" \
+  -a "alias ..='cd ..'" \
+  -a "alias ...='cd ../..'" \
+  -a "alias dl='cd ~/Downloads'" \
+  -a "alias src='cd ~/src'" \
+  -a "alias dotfiles='cd ~/dotfiles'" \
+  -a "alias private='cd ~/private'" \
+  -a "alias zrc='nvim ~/.zshrc'" \
+  -a "alias vimrc='nvim ~/.config/nvim/init.vim'" \
+  -a "alias ll='ls -la'" \
+  -a "alias tmuxconf='vim ~/.tmux.conf'" \
+  -a "alias gs='git status'" \
+  -a "alias gc='git checkout'" \
+  -a "alias gp='git push'" \
+  -a "alias gl='git pull'" \
+  -a "alias vim='nvim'" \
+  -a "alias reload='source ~/.zshrc'" \
+  -a "alias update='sudo apt update && sudo apt upgrade'" \
+  -a "alias zrcbackup='cp ~/.zshrc ~/.zshrc.backup'" \
+  -x
 
 # Install Claude
 RUN npm install -g @anthropic-ai/claude-code

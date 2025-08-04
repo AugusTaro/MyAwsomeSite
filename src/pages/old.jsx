@@ -125,7 +125,7 @@ const OldPage = ({ data }) => {
                   <RetroContentCard
                     title="アプリ"
                     describe="作成したWebアプリを追加予定です！随時更新していきます。"
-                    link="/blogIndex"
+                    link="/blogIndex/?category=WebApp"
                   />
                 </div>
               </div>
@@ -148,37 +148,14 @@ const OldPage = ({ data }) => {
                 <RetroContentCard
                   title="アプリ"
                   describe="作成したWebアプリを追加予定です！随時更新していきます。"
-                  link="/blogIndex"
+                  link="/blogIndex/?category=WebApp"
                 />
               </div>
             </div>
           </>
         )}
 
-        <hr style={{ border: 'none', borderTop: '2px solid #000000', margin: '15px 0' }} />
 
-        <hr style={{ border: 'none', borderTop: '1px solid #000000', margin: '30px 0' }} />
-
-        <div style={{
-          backgroundColor: '#e0e0e0',
-          border: '2px inset #cccccc',
-          padding: '15px',
-          textAlign: 'center',
-          fontFamily: '"創英角ポップ体", "Souei Kaku Pop", "HGS創英角ポップ体", "Comic Sans MS", fantasy'
-        }}>
-          <p style={{ fontSize: '10px', margin: '8px 0', color: '#000080' }}>
-            推奨環境: Internet Explorer 4.0以上 / Netscape Navigator 4.0以上
-          </p>
-          <p style={{ fontSize: '10px', margin: '8px 0', color: '#000080' }}>
-            解像度: 800x600以上 / 256色以上 / JavaScript有効
-          </p>
-          <p style={{ fontSize: '9px', margin: '8px 0', color: '#666666' }}>
-            このページのデザインは1999年当時のWebサイトを再現しています
-          </p>
-          <div style={{ fontSize: '9px', color: '#800080', marginTop: '10px' }}>
-            Webmaster: augustaro@example.com | Since 1999.01.01
-          </div>
-        </div>
       </RetroLayout>
     </>
   )
