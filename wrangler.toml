@@ -12,7 +12,7 @@ command = "npm run build"
 
 # Environment variables for production
 [env.production]
-name = "augustaro-com-production"
+name = "my-awsome-site"
 vars = { NODE_ENV = "production" }
 routes = [
   "augustaro.com/*"
@@ -20,7 +20,7 @@ routes = [
 
 # Environment variables for staging
 [env.staging]
-name = "augustaro-com-staging"
+name = "augustaro-com-dev"
 vars = { NODE_ENV = "staging" }
 routes = [
   "staging.augustaro.com/*"
