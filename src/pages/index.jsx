@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ModernPage from "../components/pages/ModernPage"
+import RetroPage from "../components/pages/RetroPage"
 
 export const StartPage = ({ location, data }) => {
-  return <ModernPage location={location} data={data} />
+  return <RetroPage location={location} data={data} />
 }
 
 export default StartPage

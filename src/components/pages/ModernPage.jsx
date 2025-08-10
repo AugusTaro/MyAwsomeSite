@@ -12,7 +12,7 @@ const ModernPage = ({ location, data }) => {
     <>
       <Layout location={location}>
         <Seo
-          title="AugusTaroの館"
+          title="AugusTaroの館 - モダンver"
           eyecatch="https://augustaro.github.io/My_Images/MyIcon/MyIcon.jpg"
         >
           <div className="flex justify-center  ">
