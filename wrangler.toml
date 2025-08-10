@@ -1,0 +1,23 @@
+name = "augustaro-com"
+compatibility_date = "2024-08-10"
+
+[env.staging]
+name = "augustaro-com-staging"
+routes = [
+  "staging.augustaro.com/*"
+]
+
+[env.production]
+name = "augustaro-com-production"
+routes = [
+  "augustaro.com/*"
+]
+
+# 静的アセット用の設定
+[[rules]]
+type = "Text"
+globs = ["**/*.html", "**/*.txt", "**/*.css", "**/*.js", "**/*.json"]
+
+[[rules]]
+type = "Data"
+globs = ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.svg", "**/*.webp", "**/*.woff", "**/*.woff2"]
