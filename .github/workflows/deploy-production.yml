@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare Workers (Staging)
+name: Deploy to Cloudflare Workers (Production)
 
 on:
   push:
@@ -31,5 +31,5 @@ jobs:
       # 5) Cloudflare Workers にデプロイ
       - uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: publish --env staging
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          command: publish --env production
