@@ -1,0 +1,35 @@
+name: Deploy to Cloudflare Workers (Staging)
+
+on:
+  push:
+    branches: [ main ]   # mainブランチにpushされたら実行
+  workflow_dispatch:      # 手動実行も可
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) ソースコードをチェックアウト
+      - uses: actions/checkout@v4
+
+      # 2) Node.js 環境をセットアップ
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3) 依存関係をインストール
+      - run: npm ci
+
+      # 4) ビルド
+      - run: npm run build
+        env:
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
+          MICROCMS_ENDPOINT: ${{ secrets.MICROCMS_ENDPOINT }}
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+
+      # 5) Cloudflare Workers にデプロイ
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: publish --env staging
