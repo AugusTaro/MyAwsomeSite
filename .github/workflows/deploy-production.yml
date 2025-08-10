@@ -3,6 +3,8 @@ name: Deploy to Cloudflare Workers (Production)
 on:
   push:
     branches: [ master ]   # masterブランチにpushされたら実行
+  repository_dispatch:     # MicroCMSのWebhookから実行
+    types: [update]
   workflow_dispatch:       # 手動実行も可
 
 jobs:
