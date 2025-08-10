@@ -20,15 +20,19 @@ jobs:
       # 3) 依存関係をインストール
       - run: npm ci
 
-      # 4) ビルド
+      # 4) Cloudflare環境変数を設定
+      - run: |
+          echo "MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env.production
+          echo "MICROCMS_SERVICE_ID=${{ secrets.MICROCMS_SERVICE_ID }}" >> .env.production
+          echo "MICROCMS_ENDPOINT=${{ secrets.MICROCMS_ENDPOINT }}" >> .env.production
+          echo "GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}" >> .env.production
+
+      # 5) ビルド
       - run: npm run build
         env:
-          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-          MICROCMS_SERVICE_ID: ${{ secrets.MICROCMS_SERVICE_ID }}
-          MICROCMS_ENDPOINT: ${{ secrets.MICROCMS_ENDPOINT }}
-          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          NODE_ENV: production
 
-      # 5) Cloudflare Workers にデプロイ
+      # 6) Cloudflare Workers にデプロイ
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
