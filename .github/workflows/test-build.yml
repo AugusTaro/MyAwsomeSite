@@ -35,7 +35,7 @@ jobs:
       # 6) Wranglerの設定チェック（実際のデプロイは行わない）
       - uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: deploy --dry-run --env production
 
   lint-and-format:
