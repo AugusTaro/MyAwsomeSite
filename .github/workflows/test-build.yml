@@ -1,0 +1,71 @@
+name: Test Build on PR
+
+on:
+  pull_request:
+    branches: [ master ]   # PRがmasterブランチに対して作成されたら実行
+  workflow_dispatch:       # 手動実行も可
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) ソースコードをチェックアウト
+      - uses: actions/checkout@v4
+
+      # 2) Node.js 環境をセットアップ
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3) 依存関係をインストール
+      - run: npm ci
+
+      # 4) テスト用環境変数を設定
+      - run: |
+          echo "MICROCMS_API_KEY=${{ secrets.MICROCMS_API_KEY }}" >> .env.production
+          echo "MICROCMS_SERVICE_ID=${{ secrets.MICROCMS_SERVICE_ID }}" >> .env.production
+          echo "MICROCMS_ENDPOINT=${{ secrets.MICROCMS_ENDPOINT }}" >> .env.production
+          echo "GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}" >> .env.production
+
+      # 5) ビルドテスト
+      - run: npm run build
+        env:
+          NODE_ENV: production
+
+      # 6) Wranglerの設定チェック（実際のデプロイは行わない）
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          command: deploy --dry-run --env production
+
+  lint-and-format:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) ソースコードをチェックアウト
+      - uses: actions/checkout@v4
+
+      # 2) Node.js 環境をセットアップ
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3) 依存関係をインストール
+      - run: npm ci
+
+      # 4) Lintチェック（もしpackage.jsonにlintスクリプトがあれば）
+      - run: |
+          if npm run --silent lint --dry-run 2>/dev/null; then
+            echo "Running lint check..."
+            npm run lint
+          else
+            echo "No lint script found, skipping..."
+          fi
+
+      # 5) フォーマットチェック（もしpackage.jsonにformatスクリプトがあれば）
+      - run: |
+          if npm run --silent format --dry-run 2>/dev/null; then
+            echo "Running format check..."
+            npm run format -- --check
+          else
+            echo "No format script found, skipping..."
+          fi
