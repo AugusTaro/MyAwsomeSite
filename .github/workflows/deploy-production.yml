@@ -34,7 +34,15 @@ jobs:
         env:
           NODE_ENV: production
 
-      # 6) Cloudflare Workers にデプロイ
+      # 6) Wrangler認証確認
+      - name: Wrangler whoami (sanity check)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: whoami
+
+      # 7) Cloudflare Workers にデプロイ
       - run: npx wrangler deploy --env=production
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
