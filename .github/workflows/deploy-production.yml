@@ -32,4 +32,4 @@ jobs:
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: publish --env production
+          command: deploy --env production
