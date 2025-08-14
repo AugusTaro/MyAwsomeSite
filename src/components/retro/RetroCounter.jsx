@@ -5,16 +5,27 @@ const RetroCounter = () => {
   const [todayCount, setTodayCount] = useState(0)
 
   useEffect(() => {
-    // ダミーのカウンター数値を生成
-    const baseVisitors = 12847
-    const baseTodayVisitors = 123
+    // APIから実際のカウンター値を取得
+    const fetchCounter = async () => {
+      try {
+        const response = await fetch("/api/counter", { method: "POST" })
+        const data = await response.json()
+        if (data.total) {
+          setVisitorCount(data.total)
+          // 今日のカウントは全体の3-5%程度の仮想値
+          setTodayCount(Math.floor(data.total * (Math.random() * 0.02 + 0.03)))
+        }
+      } catch (error) {
+        console.error("Failed to fetch counter:", error)
+        // エラー時はダミー値を表示
+        const now = new Date()
+        const timeVariation = Math.floor(now.getHours() * 2.3 + now.getMinutes() * 0.1)
+        setVisitorCount(12847 + timeVariation)
+        setTodayCount(123 + Math.floor(timeVariation / 10))
+      }
+    }
     
-    // 時間に基づいてランダムに変動させる
-    const now = new Date()
-    const timeVariation = Math.floor(now.getHours() * 2.3 + now.getMinutes() * 0.1)
-    
-    setVisitorCount(baseVisitors + timeVariation)
-    setTodayCount(baseTodayVisitors + Math.floor(timeVariation / 10))
+    fetchCounter()
   }, [])
 
   const counterStyles = {
