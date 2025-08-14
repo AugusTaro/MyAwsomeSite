@@ -1,32 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React, { useMemo } from "react"
 
-const RetroCounter = () => {
-  const [visitorCount, setVisitorCount] = useState(0)
-  const [todayCount, setTodayCount] = useState(0)
-
-  useEffect(() => {
-    // APIから実際のカウンター値を取得
-    const fetchCounter = async () => {
-      try {
-        const response = await fetch("/api/counter", { method: "POST" })
-        const data = await response.json()
-        if (data.total) {
-          setVisitorCount(data.total)
-          // 今日のカウントは全体の3-5%程度の仮想値
-          setTodayCount(Math.floor(data.total * (Math.random() * 0.02 + 0.03)))
-        }
-      } catch (error) {
-        console.error("Failed to fetch counter:", error)
-        // エラー時はダミー値を表示
-        const now = new Date()
-        const timeVariation = Math.floor(now.getHours() * 2.3 + now.getMinutes() * 0.1)
-        setVisitorCount(12847 + timeVariation)
-        setTodayCount(123 + Math.floor(timeVariation / 10))
-      }
+const RetroCounter = ({ visitorCount = 0, error }) => {
+  // 表示用の訪問者数（エラー時はダミー値）
+  const displayVisitorCount = useMemo(() => {
+    if (error || visitorCount === 0) {
+      const now = new Date()
+      const timeVariation = Math.floor(now.getHours() * 2.3 + now.getMinutes() * 0.1)
+      return 12847 + timeVariation
     }
-    
-    fetchCounter()
-  }, [])
+    return visitorCount
+  }, [visitorCount, error])
 
   const counterStyles = {
     container: {
@@ -83,13 +66,10 @@ const RetroCounter = () => {
         <span style={counterStyles.blinking}>★</span> ようこそ！！ <span style={counterStyles.blinking}>★</span>
       </div>
       <div style={counterStyles.counter}>
-        総訪問者数: <span style={counterStyles.number}>{visitorCount.toLocaleString()}</span>人
+        あなたは <span style={counterStyles.number}>{displayVisitorCount.toLocaleString()}</span>番目の訪問者です！
       </div>
       <div style={counterStyles.counter}>
-        本日 <span style={counterStyles.number}>{todayCount}</span>人目のお客様です！
-      </div>
-      <div style={counterStyles.counter}>
-        ♪ あなたのご訪問をお待ちしております ♪
+        ♪ ご訪問ありがとうございます ♪
       </div>
     </div>
   )
