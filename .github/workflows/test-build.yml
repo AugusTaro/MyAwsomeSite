@@ -2,8 +2,8 @@ name: Test Build on PR
 
 on:
   pull_request:
-    branches: [ master ]   # PRがmasterブランチに対して作成されたら実行
-  workflow_dispatch:       # 手動実行も可
+    branches: [master] # PRがmasterブランチに対して作成されたら実行
+  workflow_dispatch: # 手動実行も可
 
 jobs:
   test-build:
@@ -41,7 +41,7 @@ jobs:
           command: whoami
 
       # 7) Wranglerの設定チェック（実際のデプロイは行わない）
-      - run: npx wrangler deploy --dry-run --env=production
+      - run: npx wrangler deploy --dry-run
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
