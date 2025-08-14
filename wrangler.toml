@@ -1,32 +1,36 @@
 name = "my-awsome-site"
-main = "src/worker.js"
-compatibility_date = "2024-08-08"
+main = "src/worker/worker.ts"
+compatibility_date = "2025-08-08"
 
-# Static assets configuration using [assets]
+# 本番のルーティング（workers.dev だけで良ければこの配列自体を消してOK）
+routes = ["augustaro.com/*"]
+
 [assets]
 directory = "public"
 
-# Build configuration
+# 本番の DO バインド
+[durable_objects]
+bindings = [{ name = "COUNTER_DO", class_name = "CounterDO" }]
+
+# 本番の DO migration（Freeは SQLite 必須）
+[[migrations]]
+tag = "v2-counter-sqlite"
+new_sqlite_classes = ["CounterDO"]
+
 [build]
 command = "npm run build"
 
-# Environment variables for production
-[env.production]
-name = "my-awsome-site"
-vars = { NODE_ENV = "production" }
-routes = [
-  "augustaro.com/*"
-]
+# ---------------- dev 環境 ----------------
+[env.dev]
+name = "my-awesome-site-dev"        # ← typo 直した（awesome）
+# workers.dev で使うなら routes は不要。独自ドメインを使うなら下の行を残す
+# routes = ["dev.augustaro.com/*"]
 
-# Environment variables for staging
-[env.staging]
-name = "augustaro-com-dev"
-vars = { NODE_ENV = "staging" }
-routes = [
-  "staging.augustaro.com/*"
-]
+# dev の DO バインド（継承されないので必須）
+[env.dev.durable_objects]
+bindings = [{ name = "COUNTER_DO", class_name = "CounterDO" }]
 
-# Environment variables for development
-[env.development]
-vars = { NODE_ENV = "development" }
-
+# dev の DO migration（別サービス名なのでこれも必要）
+[[env.dev.migrations]]
+tag = "v2-counter-sqlite"
+new_sqlite_classes = ["CounterDO"]
