@@ -24,7 +24,7 @@ export const ModalButton = props => {
                   <>
                     <AppCard
                       title={app.title}
-                      eyeCatch={app.eyecatch.url}
+                      eyeCatch={app.eyecatch?.url}
                       link={`/articles/${app.blogsId}`}
                     />
                     <AppCard

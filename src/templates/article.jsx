@@ -25,7 +25,7 @@ const ArticlePost = ({ data, location }) => {
             ? post.content.slice(0, 150)
             : "コンテンツが存在しません。"
         }
-        eyecatch={post.eyecatch.url}
+        eyecatch={post.eyecatch?.url}
       ></Seo>
       <div className="prose mx-auto pt-5 px-3 lg:max-w-full font-serif ">
         <h1 className="">{post.title}</h1>
