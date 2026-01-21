@@ -42,7 +42,7 @@ const BlogIndex = ({ data, location }) => {
               const key = post.id
               const createdAt = post.createdAt
               const category = post.category
-              const eyecatch = post.eyecatch.url
+              const eyecatch = post.eyecatch?.url
               return (
                 <div className="p-2">
                   <ArticleCard
